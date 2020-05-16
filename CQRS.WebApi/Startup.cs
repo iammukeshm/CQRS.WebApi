@@ -1,11 +1,13 @@
+using CQRS.WebApi.Infrastructure;
 using CQRS.WebApi.Infrastructure.Context;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using System.Reflection;
 
 namespace CQRS.WebApi
 {
@@ -25,6 +27,10 @@ namespace CQRS.WebApi
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+            
+            services.AddScoped<IApplicationContext>(provider => provider.GetService<ApplicationContext>());
+            
+            services.AddInfrastructure();
             services.AddControllers();
         }
 
