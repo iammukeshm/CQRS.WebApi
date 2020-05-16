@@ -16,10 +16,5 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CQRS.WebApi.Domain\CQRS.WebApi.Domain.csproj" />
-    <ProjectReference Include="..\CQRS.WebApi.Infrastructure\CQRS.WebApi.Infrastructure.csproj" />
-  </ItemGroup>
-
 
 </Project>

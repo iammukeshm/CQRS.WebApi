@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CQRS.WebApi.Infrastructure.Features.Product.ViewModels
+namespace CQRS.WebApi.Application.Features.Product.ViewModels
 {
     public class ProductViewModel
     {

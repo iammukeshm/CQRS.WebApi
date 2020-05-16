@@ -29,8 +29,8 @@ namespace CQRS.WebApi
                     b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
             
             services.AddScoped<IApplicationContext>(provider => provider.GetService<ApplicationContext>());
-            
-            services.AddInfrastructure();
+
+            services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddControllers();
         }
 

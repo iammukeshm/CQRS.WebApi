@@ -1,5 +1,5 @@
 ﻿using CQRS.WebApi.Infrastructure.Context;
-using CQRS.WebApi.Infrastructure.Features.Product.ViewModels;
+using CQRS.WebApi.Application.Features.Product.ViewModels;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CQRS.WebApi.Infrastructure.Features.Product.Queries
+namespace CQRS.WebApi.Application.Features.Product.Queries
 {
     public class GetAllProductsQuery : IRequest<IEnumerable<ProductViewModel>>
     {

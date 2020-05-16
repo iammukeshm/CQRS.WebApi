@@ -1,4 +1,4 @@
-﻿using CQRS.WebApi.Infrastructure.Features.Product.Queries;
+﻿using CQRS.WebApi.Application.Features.ProductFeatures.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

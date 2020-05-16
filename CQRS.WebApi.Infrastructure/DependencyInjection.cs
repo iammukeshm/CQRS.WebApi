@@ -11,7 +11,7 @@ namespace CQRS.WebApi.Infrastructure
     {
         public static void AddInfrastructure(this IServiceCollection services)
         {
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            
         }
     }
 }
