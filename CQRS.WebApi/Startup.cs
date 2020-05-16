@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using System.Reflection;
 
 namespace CQRS.WebApi
@@ -27,7 +28,18 @@ namespace CQRS.WebApi
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
-            
+            #region Swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.IncludeXmlComments(string.Format(@"{0}\CQRS.WebApi.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "CQRS.WebApi",
+                });
+
+            });
+            #endregion
             services.AddScoped<IApplicationContext>(provider => provider.GetService<ApplicationContext>());
 
             services.AddMediatR(Assembly.GetExecutingAssembly());
@@ -47,7 +59,17 @@ namespace CQRS.WebApi
             app.UseRouting();
 
             app.UseAuthorization();
+            #region Swagger
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
 
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CQRS.WebApi");
+            });
+            #endregion
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

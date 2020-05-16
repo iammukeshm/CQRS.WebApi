@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CQRS.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:CQRS.WebApi.Controllers.ProductController.Create(CQRS.WebApi.Application.Features.ProductFeatures.Commands.CreateProductCommand)">
+            <summary>
+            Creates a New Product.
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CQRS.WebApi.Controllers.ProductController.GetAll">
+            <summary>
+            Gets all Products.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CQRS.WebApi.Controllers.ProductController.GetById(System.Int32)">
+            <summary>
+            Gets Product Entity by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CQRS.WebApi.Controllers.ProductController.Delete(System.Int32)">
+            <summary>
+            Deletes Product Entity based on Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CQRS.WebApi.Controllers.ProductController.Update(System.Int32,CQRS.WebApi.Features.ProductFeatures.Commands.UpdateProductCommand)">
+            <summary>
+            Updates the Product Entity based on Id.   
+            </summary>
+            <param name="id"></param>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

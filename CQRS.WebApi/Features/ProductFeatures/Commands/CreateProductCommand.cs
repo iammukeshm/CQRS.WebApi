@@ -1,4 +1,5 @@
-﻿using CQRS.WebApi.Infrastructure.Context;
+﻿using CQRS.WebApi.Domain.Models;
+using CQRS.WebApi.Infrastructure.Context;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -24,15 +25,15 @@ namespace CQRS.WebApi.Application.Features.ProductFeatures.Commands
             }
             public async Task<int> Handle(CreateProductCommand command, CancellationToken cancellationToken)
             {
-                var product = new Domain.Models.Product();
+                var product = new Product();
                 product.Barcode = command.Barcode;
                 product.Name = command.Name;
                 product.BuyingPrice = command.BuyingPrice;
                 product.Rate = command.Rate;
                 product.Description = command.Description;
-
-                var result = _context.Products.Add(product);
-                return result.Entity.Id;
+                _context.Products.Add(product);
+                await _context.SaveChanges();
+                return product.Id;
             }
         }
     }
