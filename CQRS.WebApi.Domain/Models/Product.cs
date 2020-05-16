@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CQRS.WebApi.Models
+namespace CQRS.WebApi.Domain.Models
 {
     public class Product
     {

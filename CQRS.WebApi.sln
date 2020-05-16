@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.WebApi", "CQRS.WebApi\CQRS.WebApi.csproj", "{1502BACE-D365-4E0F-B295-A7960D9C2C59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.WebApi.Infrastructure", "CQRS.WebApi.Infrastructure\CQRS.WebApi.Infrastructure.csproj", "{3C9879B9-5587-4BA5-9F8E-187058C254A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.WebApi.Domain", "CQRS.WebApi.Domain\CQRS.WebApi.Domain.csproj", "{FBD88E91-E10F-4528-90EB-EF7D670CBD10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1502BACE-D365-4E0F-B295-A7960D9C2C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1502BACE-D365-4E0F-B295-A7960D9C2C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1502BACE-D365-4E0F-B295-A7960D9C2C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C9879B9-5587-4BA5-9F8E-187058C254A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C9879B9-5587-4BA5-9F8E-187058C254A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C9879B9-5587-4BA5-9F8E-187058C254A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C9879B9-5587-4BA5-9F8E-187058C254A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBD88E91-E10F-4528-90EB-EF7D670CBD10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD88E91-E10F-4528-90EB-EF7D670CBD10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBD88E91-E10F-4528-90EB-EF7D670CBD10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBD88E91-E10F-4528-90EB-EF7D670CBD10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
