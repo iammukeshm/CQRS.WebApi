@@ -8,6 +8,6 @@ namespace CQRS.WebApi.Infrastructure.Context
     {
         DbSet<Product> Products { get; set; }
 
-        Task<int> SaveChanges();
+        Task<int> SaveChangesAsync();
     }
 }
