@@ -1,6 +1,9 @@
 using CQRS.WebApi.Infrastructure;
 using CQRS.WebApi.Infrastructure.Context;
+using CQRS.WebApi.PipelineBehaviours;
+using FluentValidation;
 using MediatR;
+using MediatR.Pipeline;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -44,6 +47,11 @@ namespace CQRS.WebApi
 
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddControllers();
+
+            services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
+
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
